@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "simple-node-app.fullname" . }}
+  labels:
+{{ include "simple-node-app.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - nodePort: {{ .Values.service.exposePort }}
+      port: {{ .Values.service.internalPort }}
+      targetPort: {{ .Values.service.targetPort }}
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: {{ include "simple-node-app.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}

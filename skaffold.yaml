@@ -1,0 +1,9 @@
+apiVersion: skaffold/v1beta12
+kind: Config
+build:
+  tagPolicy:
+    gitCommit: {}
+  artifacts:
+  - image: simplenodeapp
+    context: .
+    
