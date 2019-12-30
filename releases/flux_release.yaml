@@ -10,7 +10,7 @@ metadata:
 spec:
   releaseName: simple-node-app
   chart:
-    git: git@github.com:JonRudy/SimpleNodeApp
+    git: git@github.com:liatrio/flux-node-demo
     path: charts/simple-node-app
     ref: master
   values:
