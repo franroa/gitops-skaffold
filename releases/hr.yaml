@@ -16,5 +16,5 @@ spec:
   values:
     image:
       repository: franroa/simplenodeapp
-      tag: '911aa08-dirty'
+      tag: '17fd9e1-dirty'
     replicaCount: 1
