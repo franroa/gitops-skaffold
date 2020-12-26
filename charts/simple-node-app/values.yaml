@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: artifactory.toolchain.lead.prod.liatr.io/docker-registry/flywheel/simplenodeapp
-  tag: d3de625
+  repository: franroa/simplenodeapp
+  tag: 911aa08-dirty
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
