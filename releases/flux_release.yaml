@@ -10,7 +10,7 @@ metadata:
 spec:
   releaseName: simple-node-app
   chart:
-    git: git@github.com:liatrio/flux-node-demo
+    git: ssh://git@github.com/franroa/gitops-skaffold.git
     path: charts/simple-node-app
     ref: master
   values:
