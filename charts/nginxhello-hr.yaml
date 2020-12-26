@@ -1,20 +1,20 @@
-apiVersion: helm.fluxcd.io/v1
+---
+apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: nginxhello-hr
+  name: simple-node-app
   namespace: default
   annotations:
-    fluxcd.io/ignore: "false"
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: regexp:\b[0-9a-f]{7}\b
 spec:
+  releaseName: simple-node-app
   chart:
-    git: ssh://git@github.com/franroa/gitops.git
-    path: helm/chart
+    git: ssh://git@github.com/franroa/gitops-skaffold.git
+    path: charts/simple-node-app
     ref: master
-  rollback:
-    enable: true
-    retry: true
   values:
     image:
-      tag: 1.19.1
-    ingress:
-      host: 172.22.0.2.nip.io
+      repository: artifactory.toolchain.lead.prod.liatr.io/docker-registry/flywheel/simplenodeapp
+      tag: '2e17a26'
+    replicaCount: 1
