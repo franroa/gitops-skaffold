@@ -15,6 +15,6 @@ spec:
     ref: master
   values:
     image:
-      repository: artifactory.toolchain.lead.prod.liatr.io/docker-registry/flywheel/simplenodeapp
-      tag: '2e17a26'
+      repository: franroa/simplenodeapp
+      tag: '911aa08-dirty'
     replicaCount: 1
